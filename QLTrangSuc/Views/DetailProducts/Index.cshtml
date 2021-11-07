@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="header">
+    <section class="menu-link">
+        <div class="container">
+            <div class="mnlink-ct">
+                <a href="./Home/Index" title="Trang chủ">Trang chủ</a>
+                <i class="fa fa-angle-right"></i>
+                <a href="#" class="active">CHI TIẾT SẢN PHẨM</a>
+            </div>
+        </div>
+    </section>
+    <div class="dt-kcv">
+        <div class="slidedt-lft">
+            <div class="img-showdt-b slide-normal">
+                <div class="item-showdt-big gallery">
+                    <div class="img-preview">
+                        <img src="~/assets/images/anhchitiet1.jpg" class="zoom" data-zoom-image="anhchitiet1.jpg">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="img-showdt-sm">
+                <div class="item-showdt active">
+                    <div class="itshowdt-img">
+                        <img alt="" data-original="#" class="lazy" src="~/assets/images/act1kc.jpg" style="">
+                    </div>
+                </div>
+                <div class="item-showdt">
+                    <div class="itshowdt-img">
+                        <img alt="" data-original="#" class="lazy" src="~/assets/images/act2kc.jpg" style="">
+                    </div>
+                </div>
+            </div>
+            <div class="icon-sale"></div>
+        </div>
+
+        <div class="infdt-rght" ng-controller="ProductsController">
+            <div class="txt-detailkcv" ng-repeat="s in ListProducts">
+                <h1 class="name-itemdt">{{s.ProductName}}</h1>
+                <div class="rating">
+                    <div class="rating-st">
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>  0 đánh giá
+                        <div class="button-share-fb fb-share-button">
+                        </div>
+                    </div>
+                </div>
+                <p class="gt-rbld" id="change-pr">44.000.000</p>
+                <p>
+                    *Giá có thể thay đổi tùy thuộc vào kích thước và trọng lượng thực tế của sản phẩm.<br> Vui lòng gọi&nbsp;
+                    <a href="tel:18001168">1800 1168</a>&nbsp;để được hỗ trợ.
+                </p>
+                <div class="lstsl-dtkc">
+                    <div class="hdtr-acc" style="display:flex">
+                        <i class="far fa-heart">  Yêu thích sản phẩm</i>
+                    </div>
+                    <div class="hdtr-acc" style="padding: 10px 0px 0px 3px;">
+                        <i class="far fa-bookmark">   Mua sau</i>
+                    </div>
+                </div>
+            </div>
+            <div class="pick-diamond">
+                <div class="pick-left">
+                    <div class="choose-op"></div>
+                    <div class="pick-am">
+                        <p>Số lượng:</p>
+                        <div class="order-amount">
+                            <input onclick='subAmount("txt1")' class="btn-sub" type="button" value="-" />
+                            <input id='txt1' class="txt-amount" type="text" value="1" />
+                            <input onclick='plusAmount("txt1")' class="btn-plus" type="button" value="+" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pick-right"></div>
+            </div>
+            <div class="gt-fix"></div>
+            <div class="bt-dtdiamond">
+                <a href="#" rel="nofollow" class="btn_add-cart" data-id="59428" data-name="Nhẫn Kim cương DJR3095">thêm vào giỏ hàng</a>
+                <a href="tel:18001168" rel="nofollow">hotline:<span>1800 1168</span></a> <a href="javascript:" class="datewsh">đặt lịch hẹn tại cửa hàng</a>
+                <a href="https://www.messenger.com/t/doji.trangsuc" target="_blank" title="Chat với tư vấn viên" class="chatwtv">chat với tư vấn viên</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="table-dtkcv">
+    <h2>CHI TIẾT SẢN PHẨM</h2>
+    <div class="tabledt-ct">
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">Đá chính:</div>
+            <div class="text-ittbdtct">Kim cương 8 Hearts &amp; 8 Arrows</div>
+        </div>
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">Hình dạng:</div>
+            <div class="text-ittbdtct">
+                <img title="Round" alt="Round" data-original="~/assets/images/hinhdang1.png" class="lazy" src="~/assets/images/hinhdang1.png" style=""> Round
+            </div>
+        </div>
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">
+                Trọng lượng (cts):
+                <span class="seemore-table">
+                    <p class="">Trọng lượng Carat (Carat Weight). <a style="color:#fff;text-decoration:underline" href="/kien-thuc-kim-cuong/carat-size-trong-luong-kich-co">Tìm hiểu thêm</a></p>
+                </span>
+            </div>
+            <div class="text-ittbdtct">0.37, 0.25</div>
+        </div>
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">Màu:</div>
+            <div class="text-ittbdtct">Vàng trắng</div>
+        </div>
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">
+                Kích thước (mm):
+                <span class="seemore-table">
+                    <p class="">Kích thước (Size). <a style="color:#fff;text-decoration:underline" href="/kien-thuc-kim-cuong/carat-size-trong-luong-kich-co">Tìm hiểu thêm</a></p>
+                </span>
+            </div>
+            <div class="text-ittbdtct">4.0, 4.5</div>
+        </div>
+        <div class="item-tbdtct">
+            <div class="tit-ittbdtct">Chất liệu:</div>
+            <div class="text-ittbdtct">Vàng 14k</div>
+        </div>
+    </div>
+</div>
+<div class="lst-supportdtit">
+    <div class="supportdtit">
+        <div class="tl-h3spdtit">
+            <div class="img-tlh3spdt">
+                <img src="~/assets/images/ic-titleh3.png">
+            </div>
+            <div class="txt-tlh3spdt">
+                <h3>cam kết chất lượng</h3>
+            </div>
+        </div>
+        <div class="txt-h3spdtit">
+            <p>100% Chuẩn xác về hàm lượng kim cương. Tất cả các sản phẩm trang sức của DOJI được kiểm định chặt chẽ với máy quang phổ, cam kết chuẩn xác hàm lượng kim cương.</p><p>100% chuẩn xác về trọng lượng kim cương.</p>
+            <p>100% sản phẩm trang sức kim cương đều có đầy đủ kiểm định uy tín.</p>
+            <p>Mọi sản phẩm trang sức do DOJI bán ra đều có hóa đơn (đã bao gồm các loại thuế), ghi đầy đủ thông tin về hàm lượng, trọng lượng kim cương cũng như và điều kiện bảo hành trang sức và chính sách thu đổi.</p>
+        </div>
+    </div>
+    <div class="supportdtit">
+        <div class="tl-h3spdtit">
+            <div class="img-tlh3spdt">
+                <img src="~/assets/images/ictitlth3.png">
+            </div>
+            <div class="txt-tlh3spdt">
+                <h3>hướng dẫn mua hàng online</h3>
+            </div>
+        </div>
+        <div class="txt-h3spdtit">
+            <p>Lựa chọn sản phẩm tại các chuyên mục trên website</p>
+            <p>Thêm vào giỏ hàng.</p>
+            <p>Kiểm tra thông tin đơn hàng và đặt hàng</p>
+            <p>Kiểm tra và xác nhận đơn hàng</p>
+            <p>Đơn hàng thành công sẽ được gửi về email &amp; sms của quý khách</p>
+            <p>Xem thêm chi tiết <a href="/dich-vu-khach-hang-gt/huong-dan-dat-hang">tại đây</a></p>
+        </div>
+    </div>
+</div>

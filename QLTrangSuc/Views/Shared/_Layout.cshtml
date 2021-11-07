@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Trang sức DOJI</title>
+    <link rel="stylesheet" href="~/assets/fontawesome/css/all.css">
+    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <link rel="icon" href="https://trangsuc.doji.vn/favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/Ex.css">
+    <link href="~/assets/css/Chitietsp.css" rel="stylesheet" />
+    @RenderSection("css", false)
+    @RenderSection("js", false)
+    <script src="~/Scripts/dirPagination.js"></script>
+    <script src="~/Scripts/Controller/Angular.js"></script>
+</head>
+<body ng-app="HomeApp">
+    <div class="header">
+        <div class="hd_top">
+            <div class="hdt_left">
+                <a href="#"><img src="~/assets/images/ic-vts.png" alt=""> Về trang sức DOJI</a>
+                <a href="#"><img src="~/assets/images/ic-ht.png" alt=""> Hệ thống phân phối</a>
+                <a href="#"><img src="~/assets/images/ic-callr.png" alt=""></i> 0333.460.125</a>
+
+            </div>
+            <div class="hdt_right">
+                <div class="login_index">
+                    <a href="~/assets/html/login.html"><img src="~/assets/images/ic-account.png" alt=""> Tài khoản</a>
+                </div>
+                <div class="show_giohg">
+                    <a href="~/assets/html/giohang.html">
+                        <img src="~/assets/images/ic-gh.png" alt=""> Giỏ hàng (
+                        <label class="count_shopping_cart">0</label>
+                        )
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="hd_logo">
+            <a class="logo" href="" title="Trang sức DOJI">
+                <img src="~/assets/images/logo-t.png" alt="Trang sức DOJI">
+            </a>
+            <div class="khungtk">
+                <input type="tksp" id="keywords" placeholder="Tìm kiếm sản phẩm" style="line-height: 30px ; width: 300px" />
+                <button>
+                    <span id="search"><i class="fas fa-search"></i></span>
+                </button>
+            </div>
+        </div>
+        @*MENU*@
+        <div class="hd_menu">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                    <ul ng-controller="MenuController">
+                        <li ng-repeat="l in ListCategory">
+                            <a ng-click="SelectCategory(l.CategoryID)" href="/Products/Index">{{l.CategoryName}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Giới thiệu</a>
+                </li>
+                <li><a href="#">Bộ sưu tập</a></li>
+                <li>
+                    <a href="#">Tin tức - Sự kiện</a>
+                </li>
+                <li><a href="#">Quà tặng</a></li>
+                <li><a href="#">Ưu đãi</a></li>
+                <li>
+                    <a href="#">Liên hệ</a>
+                </li>
+                <li><a href="#" style="color: red !important;"><img src="~/assets/images/ic-sale.png" alt=""> Sale </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slide1">
+        <div class="slideshow">
+            <img id="slide" src="~/assets/images/img1.jpg" style="width: 100%;position: relative;margin: auto;height: 500px;transition: 0.5s;">
+            <i class="fas fa-chevron-right" onclick="Next()" style="position: absolute;right: 0px; bottom: 100px;color: #0000003d;"></i>
+            <i class="fas fa-chevron-left" onclick="Back()" style="position: absolute;left: 0px;bottom: 100px;color: #0000003d;"></i>
+        </div>
+    </div>
+    @RenderBody()
+    <div style="clear:both"></div>
+    <div class="footer">
+        <div class="clred"></div>
+        <div class="topft">
+            <div class="contain">
+                <div class="top-footer">
+                    <div class="logo-tft">
+                        <a href="/" title="Trang sức DOJI">
+                            <img alt="Trang sức DOJI" data-original="logo-t.png" class="lazy" width="207px" height="75px" src="~/assets/images/logo-t.png" style="">
+                        </a>
+                    </div>
+                    <div class="hl-tft"><p class="lazyed"><img src="~/assets/images/ic-callr.png" alt="">  hotline:<a href="tel:18001168" title="18001168"> 18001168</a></p></div>
+                    <div class="htpp-tft lazyed"><img src="~/assets/images/ic-ht.png" alt=""><a href="/he-thong-phan-phoi" title="Hệ thống phân phối"> Hệ thống phân phối</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="centerft">
+            <div class="lst-footer">
+                <div class="it-lft">
+                    <h3>Liên hệ</h3>
+                    <div class="clred" style="width: 35px; height: 3px; !important"></div>
+                    <ul>
+                        <li>Tập đoàn VBĐQ DOJI</li>
+                        <li>Địa chỉ: Tòa nhà DOJI Tower, Số 5 Lê Duẩn, Ba Đình, Hà Nội</li>
+                        <li>Điện thoại:<a href="tel:18001168" rel="nofollow">1800 1168</a></li>
+                        <li>Email:<a href="mailto:info@doji.vn" rel="nofollow">info@doji.vn</a></li>
+                        <li>Mã số doanh nghiệp: 0100365621</li>
+                    </ul>
+                </div>
+
+                <div class="it-lft">
+                    <h3><a href="/ve-trang-suc-doji" title="Về chúng tôi">Về chúng tôi</a></h3>
+                    <div class="clred" style="width: 35px; height: 3px; !important"></div>
+                    <ul>
+                        <li><a href="/ve-trang-suc-doji" title="Về trang sức DOJI">Về trang sức DOJI</a></li>
+                        <li><a href="/dich-vu-khach-hang" title="Dịch vụ khách hàng">Dịch vụ khách hàng</a></li>
+                        <li><a href="/kinh-doanh-ban-si" title="Kinh doanh bán sỉ">Kinh doanh bán sỉ</a></li>
+                        <li><a href="/doji-elite-club" title="DOJI Elite Club">DOJI Elite Club</a></li>
+                    </ul>
+                </div>
+
+                <div class="it-lft">
+                    <h3><a href="/dich-vu-khach-hang" title="Dịch vụ khách hàng">Dịch vụ khách hàng</a></h3>
+                    <div class="clred" style="width: 35px; height: 3px;."></div>
+                    <ul>
+                        <li><a href="/dich-vu-khach-hang/huong-dan-dat-hang" title="Hướng dẫn đặt hàng">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="/phuong-thuc-thanh-toan" title="Phương thức thanh toán">Phương thức thanh toán</a></li>
+                        <li><a href="/dich-vu-khach-hang/chinh-sach-bao-hanh" title="Chính sách &amp; bảo hành">Chính sách &amp; bảo hành</a></li>
+                        <li><a href="/cam-ket-chat-luong" title="Cam kết chất lượng">Cam kết chất lượng</a></li>
+                        <li><a href="/dieu-khoan-mua-ban" title="Điều khoản mua bán">Điều khoản mua bán</a></li>
+                    </ul>
+                </div>
+
+                <div class="it-lft">
+                    <h3><a href="/tin-khuyen-mai" title="Tin tức ">Tin tức </a></h3>
+                    <div class="clred" style="width: 35px; height: 3px;"></div>
+                    <ul>
+                        <li><a href="/tin-khuyen-mai" title="Tin khuyến mãi">Tin khuyến mãi</a></li>
+                        <li><a href="/tin-trang-suc" title="Tin trang sức">Tin trang sức</a></li>
+                        <li><a href="/video" title="Video">Video</a></li>
+                        <li><a href="/hinh-anh" title="Hình ảnh">Hình ảnh</a></li>
+                    </ul>
+                </div>
+                <div class="it-lft">
+                    <h3>Đăng ký nhận bản tin</h3>
+                    <div class="clred" style="width: 35px; height: 3px;"></div>
+                    <div class="fregis">
+
+                        <p>Nhận ngay thông tin ưu đãi mới nhất từ trang sức DOJI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social">
+            <div class="social-ct">
+                <h3><span>Kết nối với chúng tôi</span></h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-facebook"></i></span>Trang sức DOJI</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-facebook"></i></span>Trang sức cưới Wedding Land</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-facebook"></i></span>Trang sức và Quà tặng DOJI</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-facebook"></i></span>DOJI Watch</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-youtube-square"></i></span>Youtube</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic"><i class="fab fa-instagram"></i></span>Instagram</a></li>
+                    <li><a href="#" target="_blank" rel="noopener" class="nm-bdic"><span class="bd-ic ic-zalo"><i class="fas fa-globe"></i></span>Zalo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="cpr-ct">
+                    <div class="img-cpr">
+                        <img alt="" height="36" src="~/assets/images/ic-cpr.png" width="114">
+                    </div>
+                    <div class="txt-cpr"><p>Copyright 2020 © DOJI Gold &amp; Gems Group</p></div>
+                    <div class="backtop back-top"><a href="#" rel="nofollow" title="Về đầu trang">Về đầu trang  <span></span><i class="far fa-arrow-alt-circle-up"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/Ex.js"></script>
+    <script src="~/assets/js/search.js"></script>
+    <script src="~/assets/js/order.js"></script>
+
+</body>
+</html>
+
+
+
